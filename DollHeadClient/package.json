@@ -9,8 +9,6 @@
   },
   "dependencies": {
     "aplay": "^1.0.0",
-    "lame": "^1.2.4",
-    "socket.io-client": "^1.5.1",
-    "speaker": "^0.3.0"
+    "socket.io-client": "^1.5.1"
   }
 }
