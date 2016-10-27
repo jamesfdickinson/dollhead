@@ -1,10 +1,23 @@
 ﻿console.log('starting...');
 
 var socket = require('socket.io-client')('http://dollheadweb.azurewebsites.net');
-socket.on('connect', function () { });
-socket.on('command', function (command, args) {
-    if (command === "sound") {
+var Sound = require('aplay');
+var player = new Sound();
 
-    }
+socket.on('connect', function () {
+  console.log('Socket connected to server');
 });
-socket.on('disconnect', function () { });
+socket.on('command', function (command, args) {
+  console.log('command = '+command + " " + args);
+  if (command === "sound") {
+	player.play('WellDone.wav');
+  }
+  if (command === "turnRight") {
+	//todo: move motor
+  }
+  if (command === "turnLeft") {
+	//todo: move motor
+  }
+  console.log('Done');
+});
+
