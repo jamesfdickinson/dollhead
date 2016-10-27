@@ -11,14 +11,11 @@ socket.on('connect', function () {
 socket.on('command', function (command, args) {
   console.log('command = '+command + " " + args);
   if (command === "sound") {
-      var shouldPlayFart = Math.floor(Math.random() * 3);
-      if (shouldPlayFart > 0) {
-          var fartSound = fartList.getRandomFart();
-          player.play(fartSound);
-      }
-      if (shouldPlayFart == 0) {
-          player.play('WellDone.wav');
-      }
+      player.play(args);
+  }
+  if (command === "fart") {
+      var fartSound = fartList.getRandomFart();
+      player.play(fartSound);
   }
   if (command === "turnRight") {
 	//todo: move motor
