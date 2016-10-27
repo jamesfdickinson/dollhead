@@ -6,8 +6,8 @@ var Sound = require('aplay');
 var player = new Sound();
 
 //StepperWiringPi.setup(stepsInRevolution, pin1, pin2, pin3, pin4);
-var motor = StepperWiringPi.setup(360, 1, 2, 3, 4);
-motor.setSpeed(60);
+var motor = StepperWiringPi.setup(500, 17, 18, 27, 22);
+motor.setSpeed(20);
 
 socket.on('connect', function () {
   console.log('Socket connected to server');
