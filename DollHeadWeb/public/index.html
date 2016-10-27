@@ -3,21 +3,24 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
     <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width">
     <title></title>
 </head>
 <body>
+  
+    <input type="button" value="Turn Left" onclick="sendCommand('turnLeft','');" />
+    <input type="button" value="Turn Right" onclick="sendCommand('turnRight','');" />
+    <input type="button" value="Play Sound" onclick="sendCommand('sound','WellDone.wav');" />
+    <input type="button" value="Fart" onclick="sendCommand('fart','');" />
+    <hr />
     <input id="txtCommand" type="text" />
     <input id="txtArgs" type="text" />
     <input type="button" value="Send" onclick="sendCommand(document.getElementById('txtCommand').value, document.getElementById('txtArgs').value);" />
 
-    <input type="button" value="Turn Left" onclick="sendCommand('turnLeft','');" />
-    <input type="button" value="Turn Right" onclick="sendCommand('turnRight','');" />
-    <input type="button" value="Play Sound" onclick="sendCommand('sound','');" />
-
-
     <script src="socket.io.js"></script>
     <script>
-        var socket = io();  //var socket = io('http://minesweeper.io');
+        //var socket = io();  
+        var socket = io('http://dollheadweb.azurewebsites.net');
 
         //recieve
         socket.on('command', function (command, args) {
