@@ -1,5 +1,11 @@
 # dollhead
 
-To get this to work I needed to first run:
+DollHeadClient
 
-sudo apt-get install libasound2-dev
+To install:
+Go to folder DollHeadClient
+type "npm install"
+
+To run:
+node app.js
+
