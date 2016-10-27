@@ -2,3 +2,5 @@ node_modules
 obj
 /DallHeadClient/obj
 /DallHeadClient/node_modules
+.ntvs_analysis.dat
+/DollHeadClient/.vs
