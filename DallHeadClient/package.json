@@ -1,0 +1,13 @@
+{
+  "name": "DallHeadClient",
+  "version": "0.0.0",
+  "description": "DallHeadClient",
+  "main": "app.js",
+  "author": {
+    "name": "Jimmy",
+    "email": ""
+  },
+  "dependencies": {
+    "socket.io-client": "^1.5.1"
+  }
+}

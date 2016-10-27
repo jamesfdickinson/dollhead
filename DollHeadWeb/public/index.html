@@ -1,0 +1,31 @@
+﻿<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+</head>
+<body>
+    <input id="txtCommand" type="text" />
+    <input id="txtArgs" type="text" />
+    <input type="button" value="Send" onclick="sendCommand(document.getElementById('txtCommand').value, document.getElementById('txtArgs').value);" />
+
+    <input type="button" value="Send Command1" onclick="sendCommand('Command1','');" />
+
+
+    <script src="socket.io.js"></script>
+    <script>
+        var socket = io();  //var socket = io('http://minesweeper.io');
+
+        //recieve
+        socket.on('command', function (command, args) {
+        });
+
+        //send
+        function sendCommand(command, args) {
+            socket.emit('command', command, args);
+        }
+
+    </script>
+</body>
+</html>
