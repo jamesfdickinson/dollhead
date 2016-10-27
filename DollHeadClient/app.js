@@ -1,4 +1,5 @@
 ﻿console.log('starting...');
+var fartList = require('./fartList.js');
 
 var socket = require('socket.io-client')('http://dollheadweb.azurewebsites.net');
 var Sound = require('aplay');
@@ -10,7 +11,14 @@ socket.on('connect', function () {
 socket.on('command', function (command, args) {
   console.log('command = '+command + " " + args);
   if (command === "sound") {
-	player.play('WellDone.wav');
+      var shouldPlayFart = Math.floor(Math.random() * 3);
+      if (shouldPlayFart > 0) {
+          var fartSound = fartList.getRandomFart();
+          player.play(fartSound);
+      }
+      if (shouldPlayFart == 0) {
+          player.play('WellDone.wav');
+      }
   }
   if (command === "turnRight") {
 	//todo: move motor
