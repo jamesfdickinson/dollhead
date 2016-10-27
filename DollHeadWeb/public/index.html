@@ -5,12 +5,26 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width">
     <title></title>
+    <style>
+        .arrow {
+            cursor:pointer;
+            padding: 2px;
+            background-color:#EEEEEE;
+            display:inline-block;
+            width:140px;
+            font-size:120px;
+            user-select: none;
+            text-align:center;  
+        }
+    </style>
 </head>
 <body>
-  
+    <div class="arrow" onmousedown="sendCommand('turnLeft', '');" onmouseup="sendCommand('turnStop', '');" >↶</div> 
+    <div class="arrow" onmousedown="sendCommand('turnRight', '');"  onmouseup="sendCommand('turnStop', '');" > ↷</div>
+    <hr />
     <input type="button" value="Turn Left" onclick="sendCommand('turnLeft','');" />
     <input type="button" value="Turn Right" onclick="sendCommand('turnRight','');" />
-    <input type="button" value="Stop" onclick="sendCommand('turnStop','');" />  
+    <input type="button" value="Stop" onclick="sendCommand('turnStop','');" />
     <hr />
     <input type="button" value="Play Sound" onclick="sendCommand('sound','WellDone.wav');" />
     <input type="button" value="Fart" onclick="sendCommand('fart','');" />
@@ -21,7 +35,7 @@
 
     <script src="socket.io.js"></script>
     <script>
-        //var socket = io();  
+        //var socket = io();
         var socket = io('http://dollheadweb.azurewebsites.net');
 
         //recieve
