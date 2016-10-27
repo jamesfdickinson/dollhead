@@ -10,7 +10,9 @@
     <input id="txtArgs" type="text" />
     <input type="button" value="Send" onclick="sendCommand(document.getElementById('txtCommand').value, document.getElementById('txtArgs').value);" />
 
-    <input type="button" value="Send Command1" onclick="sendCommand('Command1','');" />
+    <input type="button" value="Turn Left" onclick="sendCommand('turnLeft','');" />
+    <input type="button" value="Turn Right" onclick="sendCommand('turnRight','');" />
+    <input type="button" value="Play Sound" onclick="sendCommand('sound','');" />
 
 
     <script src="socket.io.js"></script>
