@@ -1,5 +1,4 @@
 ﻿<!DOCTYPE html>
-
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
     <meta charset="utf-8" />
@@ -7,22 +6,21 @@
     <title></title>
     <style>
         .arrow {
-            cursor:pointer;
+            cursor: pointer;
             padding: 2px;
-            background-color:#EEEEEE;
-            display:inline-block;
-            width:140px;
-            font-size:120px;
-            text-align:center; 
-             
+            background-color: #EEEEEE;
+            display: inline-block;
+            width: 140px;
+            font-size: 120px;
+            text-align: center;
             user-select: none;
             -webkit-user-select: none;
         }
     </style>
 </head>
 <body>
-    <div class="arrow" onmousedown="sendCommand('turnLeft', '');" onmouseup="sendCommand('turnStop', '');" >↶</div> 
-    <div class="arrow" onmousedown="sendCommand('turnRight', '');"  onmouseup="sendCommand('turnStop', '');" > ↷</div>
+    <div class="arrow" onmousedown="sendCommand('turnLeft', '');" onmouseup="sendCommand('turnStop', '');">↶</div>
+    <div class="arrow" onmousedown="sendCommand('turnRight', '');" onmouseup="sendCommand('turnStop', '');"> ↷</div>
     <hr />
     <input type="button" value="Turn Left" onclick="sendCommand('turnLeft','');" />
     <input type="button" value="Turn Right" onclick="sendCommand('turnRight','');" />
@@ -34,6 +32,52 @@
     <input id="txtCommand" type="text" />
     <input id="txtArgs" type="text" />
     <input type="button" value="Send" onclick="sendCommand(document.getElementById('txtCommand').value, document.getElementById('txtArgs').value);" />
+    <script>
+        document.onkeydown = checkKeyDown;
+        document.onkeyup = checkKeyUp;
+        function checkKeyDown(e) {
+
+            e = e || window.event;
+
+            if (e.keyCode == '38') {
+                // up arrow
+            }
+            else if (e.keyCode == '40') {
+                // down arrow
+            }
+            else if (e.keyCode == '37') {
+                // left arrow
+                sendCommand('turnLeft', '');
+            }
+            else if (e.keyCode == '39') {
+                // right arrow
+                sendCommand('turnRight', '');
+            }
+        }
+
+        function checkKeyUp(e) {
+
+            e = e || window.event;
+
+            if (e.keyCode == '38') {
+                // up arrow
+            }
+            else if (e.keyCode == '40') {
+                // down arrow
+            }
+            else if (e.keyCode == '37') {
+                // left arrow
+                sendCommand('turnStop', '');
+            }
+            else if (e.keyCode == '39') {
+                // right arrow
+                sendCommand('turnStop', '');
+            }
+
+
+        }
+    </script>
+
 
     <script src="socket.io.js"></script>
     <script>
