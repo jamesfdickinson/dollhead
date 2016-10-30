@@ -15,11 +15,11 @@ socket.on('connect', function () {
 socket.on('command', function (command, args) {
   console.log('command = '+command + " " + args);
   if (command === "sound") {
-      player.play(args);
+      player.play(__dirname +"/"+args);
   }
   if (command === "fart") {
       var fartSound = fartList.getRandomFart();
-      player.play(fartSound);
+      player.play(__dirname + "/" +fartSound);
   }
   if (command === "turnRight") {
 	//move motor
