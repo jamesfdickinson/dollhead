@@ -16,11 +16,19 @@
             user-select: none;
             -webkit-user-select: none;
         }
+
+            .arrow:active {
+                color: green;
+                background-color: #CCCCCC;
+            }
     </style>
 </head>
 <body>
     <div class="arrow" onmousedown="sendCommand('turnLeft', '');" onmouseup="sendCommand('turnStop', '');">↶</div>
     <div class="arrow" onmousedown="sendCommand('turnRight', '');" onmouseup="sendCommand('turnStop', '');"> ↷</div>
+    <hr />
+    <div class="arrow" onmousedown="sendCommand('turnLeft2', '');" onmouseup="sendCommand('turnStop2', '');">↑</div>
+    <div class="arrow" onmousedown="sendCommand('turnRight2', '');" onmouseup="sendCommand('turnStop2', '');">↓</div>
     <hr />
     <input type="button" value="Turn Left" onclick="sendCommand('turnLeft','');" />
     <input type="button" value="Turn Right" onclick="sendCommand('turnRight','');" />
@@ -34,49 +42,49 @@
     <input type="button" value="Send" onclick="sendCommand(document.getElementById('txtCommand').value, document.getElementById('txtArgs').value);" />
 
     <hr />
-	<br/>
-	<input type="button" value="Come Closer" onclick="sendCommand('sound','ComeCloser.wav');" />
-	<input type="button" value="Danish Reading" onclick="sendCommand('sound','Danish.wav');" />
-	<input type="button" value="ahhhhh" onclick="sendCommand('sound','ahhh.wav');" />
-	<input type="button" value="Spaghetti" onclick="sendCommand('sound','Spaghetti.wav');" />
-	<hr />
-	<br/>
-	<input type="button" value="Hair Cut" onclick="sendCommand('sound','Haircut.wav');" />
-	<input type="button" value="Dress" onclick="sendCommand('sound','Dress.wav');" />
-	<input type="button" value="Candy" onclick="sendCommand('sound','Candy.wav');" />
-	<input type="button" value="Brains" onclick="sendCommand('sound','Brains.wav');" />
-	<input type="button" value="No Shoes" onclick="sendCommand('sound','NoShoes.wav');" />
-	<input type="button" value="No Shoes man" onclick="sendCommand('sound','NoShoesMan.wav');" />
-	<input type="button" value="Burp" onclick="sendCommand('sound','Burp.wav');" />
-	<input type="button" value="Burp With Laugh" onclick="sendCommand('sound','BurpWithLaugh.wav');" />
+    <br />
+    <input type="button" value="Come Closer" onclick="sendCommand('sound','ComeCloser.wav');" />
+    <input type="button" value="Danish Reading" onclick="sendCommand('sound','Danish.wav');" />
+    <input type="button" value="ahhhhh" onclick="sendCommand('sound','ahhh.wav');" />
+    <input type="button" value="Spaghetti" onclick="sendCommand('sound','Spaghetti.wav');" />
+    <hr />
+    <br />
+    <input type="button" value="Hair Cut" onclick="sendCommand('sound','Haircut.wav');" />
+    <input type="button" value="Dress" onclick="sendCommand('sound','Dress.wav');" />
+    <input type="button" value="Candy" onclick="sendCommand('sound','Candy.wav');" />
+    <input type="button" value="Brains" onclick="sendCommand('sound','Brains.wav');" />
+    <input type="button" value="No Shoes" onclick="sendCommand('sound','NoShoes.wav');" />
+    <input type="button" value="No Shoes man" onclick="sendCommand('sound','NoShoesMan.wav');" />
+    <input type="button" value="Burp" onclick="sendCommand('sound','Burp.wav');" />
+    <input type="button" value="Burp With Laugh" onclick="sendCommand('sound','BurpWithLaugh.wav');" />
 
-	<hr />
-	<br/>
+    <hr />
+    <br />
 
-	<input type="button" value="Play Miranda" onclick="sendCommand('sound','Miranda.wav');" />
-	<input type="button" value="Play Derek" onclick="sendCommand('sound','Derek.wav');" />
-	<input type="button" value="Play Spencer" onclick="sendCommand('sound','Spencer.wav');" />
-	<input type="button" value="Play Lindsey" onclick="sendCommand('sound','Lindsay.wav');" />
-	<input type="button" value="Play Kara" onclick="sendCommand('sound','Kara.wav');" />
-	<input type="button" value="Play Cassie" onclick="sendCommand('sound','Cassie.wav');" />
-	<input type="button" value="Play Aaron" onclick="sendCommand('sound','Erin.wav');" />
-	<input type="button" value="Play Valerie" onclick="sendCommand('sound','Valerie.wav');" />
-	<hr />
-	<br/>
-	
-	<input type="button" value="Play Dallin" onclick="sendCommand('sound','Dallin.wav');" />
-	<input type="button" value="Play Eden" onclick="sendCommand('sound','Eden.wav');" />
-	<input type="button" value="Play Tanner" onclick="sendCommand('sound','Tanner.wav');" />
-	<input type="button" value="Play Carter" onclick="sendCommand('sound','Carter.wav');" />
-	<input type="button" value="Play Lily" onclick="sendCommand('sound','Lily.wav');" />
-	<input type="button" value="Play Luke" onclick="sendCommand('sound','Luke.wav');" />
-	<input type="button" value="Play Logan" onclick="sendCommand('sound','Logan.wav');" />
-	<input type="button" value="Play Rosemary" onclick="sendCommand('sound','Rosemary.wav');" />
-	<hr />
-	<br/>
-	<input type="button" value="Play Abby" onclick="sendCommand('sound','Abby.wav');" />
-	<input type="button" value="Play Noah" onclick="sendCommand('sound','Noah.wav');" />
-	<input type="button" value="Play Hannah" onclick="sendCommand('sound','Hannah.wav');" />
+    <input type="button" value="Play Miranda" onclick="sendCommand('sound','Miranda.wav');" />
+    <input type="button" value="Play Derek" onclick="sendCommand('sound','Derek.wav');" />
+    <input type="button" value="Play Spencer" onclick="sendCommand('sound','Spencer.wav');" />
+    <input type="button" value="Play Lindsey" onclick="sendCommand('sound','Lindsay.wav');" />
+    <input type="button" value="Play Kara" onclick="sendCommand('sound','Kara.wav');" />
+    <input type="button" value="Play Cassie" onclick="sendCommand('sound','Cassie.wav');" />
+    <input type="button" value="Play Aaron" onclick="sendCommand('sound','Erin.wav');" />
+    <input type="button" value="Play Valerie" onclick="sendCommand('sound','Valerie.wav');" />
+    <hr />
+    <br />
+
+    <input type="button" value="Play Dallin" onclick="sendCommand('sound','Dallin.wav');" />
+    <input type="button" value="Play Eden" onclick="sendCommand('sound','Eden.wav');" />
+    <input type="button" value="Play Tanner" onclick="sendCommand('sound','Tanner.wav');" />
+    <input type="button" value="Play Carter" onclick="sendCommand('sound','Carter.wav');" />
+    <input type="button" value="Play Lily" onclick="sendCommand('sound','Lily.wav');" />
+    <input type="button" value="Play Luke" onclick="sendCommand('sound','Luke.wav');" />
+    <input type="button" value="Play Logan" onclick="sendCommand('sound','Logan.wav');" />
+    <input type="button" value="Play Rosemary" onclick="sendCommand('sound','Rosemary.wav');" />
+    <hr />
+    <br />
+    <input type="button" value="Play Abby" onclick="sendCommand('sound','Abby.wav');" />
+    <input type="button" value="Play Noah" onclick="sendCommand('sound','Noah.wav');" />
+    <input type="button" value="Play Hannah" onclick="sendCommand('sound','Hannah.wav');" />
 
     <script>
         document.onkeydown = checkKeyDown;
