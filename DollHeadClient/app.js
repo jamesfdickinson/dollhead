@@ -1,7 +1,7 @@
 ﻿console.log('starting...');
 var fartList = require('./fartList.js');
 var StepperWiringPi = require("stepper-wiringpi");
-var socket = require('socket.io-client')('http://dollheadweb.azurewebsites.net');
+var socket = require('socket.io-client')('http://dollthing1991.s3-website-us-east-1.amazonaws.com/');
 var Sound = require('aplay');
 var player = new Sound();
 
