@@ -130,7 +130,7 @@
     <script src="socket.io.js"></script>
     <script>
         //var socket = io();
-        var socket = io('http://ec2-54-227-229-73.compute-1.amazonaws.com/');
+        var socket = io('http://ec2-54-227-229-73.compute-1.amazonaws.com/:1337');
 
         //recieve
         socket.on('command', function (command, args) {
