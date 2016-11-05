@@ -25,6 +25,11 @@ io.on('connection', ioConnection);
 
 function ioConnection(socket) {
     socket.on("command", function (command, args) {
+		console.log('command');
         io.sockets.emit('command', command, args);
+    });
+	socket.on("reply", function (command, args) {
+		console.log('reply');
+        io.sockets.emit('reply', command, args);
     });
 };
