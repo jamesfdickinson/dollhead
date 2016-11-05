@@ -2,7 +2,7 @@
 var express = require('express');
 var ioServer = require('socket.io');
 
-var port = process.env.port || 80;
+var port = process.env.port || 1337;
 var version = "0.1.0";
 
 //express server routing
