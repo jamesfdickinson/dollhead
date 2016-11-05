@@ -29,8 +29,10 @@
     <input type="button" value="Play Sound" onclick="sendCommand('sound','WellDone.wav');" />
     <input type="button" value="Fart" onclick="sendCommand('fart','');" />
     <hr />
+
     <input id="txtCommand" type="text" />
     <input id="txtArgs" type="text" />
+	
     <input type="button" value="Send" onclick="sendCommand(document.getElementById('txtCommand').value, document.getElementById('txtArgs').value);" />
 
     <hr />
@@ -127,8 +129,8 @@
 
     <script src="socket.io.js"></script>
     <script>
-        //var socket = io();
-        var socket = io('http://dollheadweb.azurewebsites.net');
+        var socket = io();
+        //var socket = io('http://dollthing1991.s3-website-us-east-1.amazonaws.com/');
 
         //recieve
         socket.on('command', function (command, args) {
