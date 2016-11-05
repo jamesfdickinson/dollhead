@@ -22,9 +22,9 @@ console.log('123123');
 //socket io server
 //var io = new ioServer();
 //io.attach(httpServer);
-ioServer.on('connection', ioConnection);
 
 httpServer.listen(port, function () { console.log('***Server(http) listening at port %d *** version %s', port, version); });
+ioServer.on('connection', ioConnection);
 
 function ioConnection(socket) {
     socket.on("command", function (command) {
