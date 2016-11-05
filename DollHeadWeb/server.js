@@ -24,12 +24,12 @@ io.attach(httpServer);
 io.on('connection', ioConnection);
 
 function ioConnection(socket) {
-    socket.on("command", function (command, args) {
+    socket.on("command", function (command) {
 		console.log('command');
-        io.sockets.emit('command', command, args);
+        io.sockets.emit('command', command);
     });
-	socket.on("reply", function (command, args) {
+	socket.on("reply", function (command) {
 		console.log('reply');
-        io.sockets.emit('reply', command, args);
+        io.sockets.emit('reply', command);
     });
 };
