@@ -12,7 +12,7 @@ app.use(function (req, res, next) {
     res.header('Access-Control-Allow-Origin', '*');
     next();
 });
-
+console.log('123123');
 //http server 
 var httpServer = http.createServer(app);
 httpServer.listen(port, function () { console.log('***Server(http) listening at port %d *** version %s', port, version); });
