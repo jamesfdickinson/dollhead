@@ -23,12 +23,8 @@ http.listen(port, function(){
 });
 
 function ioConnection(socket) {
-    socket.on("command", function (command) {
+    socket.on("command", function (command, args) {
 		console.log('command');
-        io.sockets.emit('command', command);
-    });
-	socket.on("reply", function (command) {
-		console.log('reply');
-        io.sockets.emit('reply', command);
+        io.sockets.emit('command', command, args);
     });
 };
