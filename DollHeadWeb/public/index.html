@@ -133,12 +133,14 @@
         //var socket = io('http://ec2-54-227-229-73.compute-1.amazonaws.com/:1337');
 
         //recieve
-        socket.on('command', function (command, args) {
+        socket.on('command', function (data) {
         });
 
         //send
         function sendCommand(command, args) {
-            socket.emit('command', command, args);
+		
+		var data = {command: command, args: args);
+            socket.emit('command', data);
         }
 
     </script>
